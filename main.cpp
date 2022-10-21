@@ -8,6 +8,7 @@
 using namespace std;
 
 void animation(string element[], int size);
+void inputAnimation();
 
 int main(int argc, char *argv[])
 {
@@ -78,14 +79,12 @@ int main(int argc, char *argv[])
 
     case 2:
     spin:
-        system("clear");
-        cout << "Input elements in the file" << endl;
-        sleep(2);
+        inputAnimation();
         system("nano spinItemsInput.txt");
 
         if (ptr == NULL)
         {
-            cout << "Input elements in the file\n and run program again";
+            cout << "Input elements in the file and run program again ";
         }
         else
         {
@@ -123,7 +122,7 @@ void animation(string element[], int size)
 {
     int speed = 150000;
     int random;
-    for (int runTime = 1; runTime < 100; runTime++)
+    for (int runTime = 1; runTime < 15; runTime++)
     {
 
         for (int i = 1; i <= size; i++)
@@ -131,7 +130,6 @@ void animation(string element[], int size)
             system("clear");
             for (int j = 1; j <= size; j++)
             {
-                random = rand() % 100;
                 if (j == i)
                 {
 
@@ -143,18 +141,95 @@ void animation(string element[], int size)
                 }
                 cout << " " << element[j - 1] << endl;
             }
-            if (random <= 2)
+            if (runTime == 8)
+            {
+                speed = 20000;
+            }
+            else if (runTime == 9)
+            {
+                speed = 300000;
+            }
+            else if (runTime == 10)
+            {
+                speed = 500000;
+            }
+            else if (runTime == 11)
+            {
+                speed = 700000;
+            }
+            else if (runTime == 12)
+            {
+                speed = 800000;
+            }
+            else if (runTime == 13)
+            {
+                speed = 900000;
+            }
+            else if (runTime == 14)
+            {
+                speed = 1000000;
+            }
+            usleep(speed);
+        }
+    }
+    for (int runTime = 1; runTime < 4; runTime++)
+    {
+
+        for (int i = 1; i <= size; i++)
+        {
+            system("clear");
+            for (int j = 1; j <= size; j++)
+            {
+                random = rand() % 5;
+                if (j == i)
+                {
+
+                    cout << ">";
+                }
+                else
+                {
+                    cout << " ";
+                }
+                cout << " " << element[j - 1] << endl;
+            }
+            // cout << random << endl;
+            usleep(1200000);
+            if (random == 2)
             {
                 goto stop;
             }
-            // cout << random << endl;
-            // if (runTime == 7)
-            // {
-            //     speed = 500000;
-            // }
-            usleep(speed);
         }
     }
 stop:
     cout << "";
+}
+
+void inputAnimation()
+{
+    string input = "Input elements in the file";
+    for (int i = 0; i < 3; i++)
+    {
+        system("clear");
+        cout << input << "" << endl;
+        usleep(200000);
+        system("clear");
+        cout << input << "." << endl;
+        usleep(200000);
+        system("clear");
+        cout << input << ".." << endl;
+        usleep(200000);
+        system("clear");
+        cout << input << "..." << endl;
+        usleep(200000);
+        system("clear");
+        cout << input << " .." << endl;
+        usleep(200000);
+        system("clear");
+        cout << input << "  ." << endl;
+        usleep(200000);
+        system("clear");
+        cout << input << "" << endl;
+        usleep(200000);
+        system("clear");
+    }
 }
