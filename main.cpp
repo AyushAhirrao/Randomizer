@@ -11,6 +11,10 @@ void animation(string element[], int size);
 int main()
 {
     srand(time(0));
+
+    int random_number_flip = rand() % 100;
+    int rand_number_loop = rand() % 100;
+
     int choice;
 
     // for case 2
@@ -32,6 +36,27 @@ int main()
     switch (choice)
     {
     case 1:
+        for (int i = 0; i < random_number_flip; i++)
+        {
+            cout << "Heads\n";
+            usleep(50000);
+            system("clear");
+            cout << "Tails\n";
+            usleep(50000);
+            system("clear");
+        }
+
+        if (rand() % 100 >= 50)
+        {
+            cout << "Heads" << endl;
+            exit(1);
+        }
+        else
+        {
+            cout << "Tails" << endl;
+            exit(1);
+        }
+
         break;
 
     case 2:
