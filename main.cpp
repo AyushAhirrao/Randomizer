@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
          << "[0] Exit\n"
          << endl;
 
-    cout << "Enter your choice [1-2] : ";
+    cout << "Enter your choice [0-2] : ";
     cin >> choice;
 
     switch (choice)
@@ -122,7 +122,7 @@ void animation(string element[], int size)
 {
     int speed = 150000;
     int random;
-    for (int runTime = 1; runTime < 15; runTime++)
+    for (int runTime = 1; runTime < 10; runTime++)
     {
 
         for (int i = 1; i <= size; i++)
@@ -153,22 +153,6 @@ void animation(string element[], int size)
             {
                 speed = 500000;
             }
-            else if (runTime == 11)
-            {
-                speed = 700000;
-            }
-            else if (runTime == 12)
-            {
-                speed = 800000;
-            }
-            else if (runTime == 13)
-            {
-                speed = 900000;
-            }
-            else if (runTime == 14)
-            {
-                speed = 1000000;
-            }
             usleep(speed);
         }
     }
@@ -193,7 +177,7 @@ void animation(string element[], int size)
                 cout << " " << element[j - 1] << endl;
             }
             // cout << random << endl;
-            usleep(1200000);
+            usleep(800000);
             if (random == 2)
             {
                 goto stop;
